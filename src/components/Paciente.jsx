@@ -1,34 +1,44 @@
-const Paciente = () => {
+const Paciente = ({paciente, setPaciente}) => {
+
     return (
         <div className="mx-5 my-10 bg-white shadow-md rounded-xl px-5 py-10">
             <p className="font-bold mb-3 text-gray-700 uppercase">
                 Nombre: {''}
-                <span className="font-normal normal-case">Hook</span>
+                <span className="font-normal normal-case">{paciente.nombre}</span>
             </p>
 
             <p className="font-bold mb-3 text-gray-700 uppercase">
                 Propietario: {''}
-                <span className="font-normal normal-case">Hook</span>
+                <span className="font-normal normal-case">{paciente.propietario}</span>
             </p>
 
             <p className="font-bold mb-3 text-gray-700 uppercase">
                 Email: {''}
-                <span className="font-normal normal-case">Hook</span>
+                <span className="font-normal normal-case">{paciente.email}</span>
             </p>
 
             <p className="font-bold mb-3 text-gray-700 uppercase">
                 Fecha Alta: {''}
-                <span className="font-normal normal-case">Hook</span>
+                <span className="font-normal normal-case">{paciente.fecha}</span>
             </p>
 
             <p className="font-bold mb-3 text-gray-700 uppercase">
                 Síntomas: {''}
-                <span className="font-normal normal-case">Minim laboris occaecat esse ex et id
-                 deserunt exercitation eiusmod. Aute ex id eu voluptate et proident. Minim ea anim aute 
-                 consequat qui cupidatat velit. Voluptate sit eiusmod sint et eu non et tempor. 
-                 Tempor laborum magna amet excepteur. Ullamco ea sunt enim qui commodo ad enim nisi 
-                 qui veniam ex mollit excepteur.</span>
+                <span className="font-normal normal-case">{paciente.sintomas}.</span>
             </p>
+            <div className="flex justify-between mt-10">
+            <button 
+                type="button"
+                className="py-2 px-10 bg-indigo-600 hover:bg-indigo-800 text-white font-bold uppercase rounded-lg"
+                onClick={() => setPaciente(paciente)}
+            >Editar</button>
+
+            <button 
+                type="button"
+                className="py-2 px-10 bg-red-600 hover:bg-red-800 text-white font-bold uppercase rounded-lg"
+            >Eliminar</button>
+            </div>
+            
         </div>
     )
 }
